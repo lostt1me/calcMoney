@@ -1,0 +1,23 @@
+.custom-control {
+    padding-left: 0px;
+}
+.custom-control-input:checked {
+    & ~ .custom-control-label::before {
+        background-color: orange;
+        border-color:grey;
+    }
+    & ~ .custom-control-label {
+        color: black;
+    }
+    & ~ .custom-control-label-left {
+        color: grey;
+    }
+}
+.custom-control-label {
+    margin-left: 35px;
+    color: grey;
+}
+.custom-control-label-left {
+    padding-right: 8px;
+    padding-left: 17px;
+}

@@ -1,0 +1,16 @@
+.input-field {
+  border-radius: 10px 10px 10px 10px;
+}
+@font-face { 
+    font-family: "rouble";
+    src: url("../font/fonts//rouble.otf") format("opentype");
+}
+.rub { 
+    font-family: "rouble"; 
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.input-form {
+    padding-left: 17px;
+}
