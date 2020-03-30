@@ -5,8 +5,10 @@ import $ from 'jquery';
 
 export const ToolTip = () => {
     $(function () {
-        ($('[data-toggle="tooltip"]') as any).tooltip(
-        )
+        ($('[data-toggle="tooltip"]') as any).tooltip({
+            template: tooltipTemplate,
+            title: 'МРОТ - минимальный размер оплаты труда. Разный для разных регионов.'
+        })
     })
     const [activeTooltip, setActiveTooltip] = useState(false);
     function onClickToolTip(): void {
@@ -15,6 +17,7 @@ export const ToolTip = () => {
     function onBlurToolTip(): void {
         setActiveTooltip(false);
     }
+    const tooltipTemplate = '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
     const infoCircle = (
         <svg className="bi bi-info-circle" width="1em" height="1em" viewBox="0 0 18 18" fill="grey" xmlns="http://www.w3.org/2000/svg" onClick={() => onClickToolTip()}>
             <path fillRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clipRule="evenodd"/>
@@ -32,7 +35,7 @@ export const ToolTip = () => {
     );
 
     return (
-        <div data-toggle="tooltip" data-placement="bottom" title="МРОТ - минимальный размер оплаты труда. Разный для разных регионов.">
+        <div data-toggle="tooltip" data-placement="bottom">
             {activeTooltip? xCricle : infoCircle}
         </div>
     )
