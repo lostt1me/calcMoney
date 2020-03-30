@@ -5,7 +5,8 @@ import $ from 'jquery';
 
 export const ToolTip = () => {
     $(function () {
-        ($('[data-toggle="tooltip"]') as any).tooltip()
+        ($('[data-toggle="tooltip"]') as any).tooltip(
+        )
     })
     const [activeTooltip, setActiveTooltip] = useState(false);
     function onClickToolTip(): void {
@@ -31,16 +32,8 @@ export const ToolTip = () => {
     );
 
     return (
-        <div>
-            <div data-toggle="tooltip">
-                {activeTooltip? xCricle : infoCircle}
-            </div>
-            <div className="tooltip bs-tooltip-top" role="tooltip">
-                <div className="arrow"></div>
-                <div className="tooltip-inner">
-                    МРОТ - минимальный размер оплаты труда. Разный для разных регионов.
-                </div>
-            </div>
+        <div data-toggle="tooltip" data-placement="bottom" title="МРОТ - минимальный размер оплаты труда. Разный для разных регионов.">
+            {activeTooltip? xCricle : infoCircle}
         </div>
     )
 }
