@@ -22,7 +22,7 @@ export const MoneyInput = (data: IMoneyInputProps) => {
     const { payType, changeNet } = data;
     return (
         <div className="d-flex flex-row input-form">
-            <Field name="money" type="number" className="input-field" component="input" onChange={changeNet}/>
+            <Field name="money" type="number" className="input-field" component="input" onChange={changeNet} min="1" step="1"/>
             <span className="rub">i</span>
             <span className="rub">{moneySpan[payType]}</span>
         </div>
