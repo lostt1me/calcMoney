@@ -7,7 +7,8 @@ export const ToolTip = () => {
     $(function () {
         ($('[data-toggle="tooltip"]') as any).tooltip({
             template: tooltipTemplate,
-            title: 'МРОТ - минимальный размер оплаты труда. Разный для разных регионов.'
+            title: 'МРОТ - минимальный размер оплаты труда. Разный для разных регионов.',
+            trigger: 'hover focus'
         })
     })
     const [activeTooltip, setActiveTooltip] = useState(false);
@@ -27,7 +28,7 @@ export const ToolTip = () => {
     );
     
     const xCricle = (
-        <svg className="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 18 18" fill="grey" xmlns="http://www.w3.org/2000/svg" onMouseLeave={() => onBlurToolTip()}>
+        <svg className="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 18 18" fill="grey" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clipRule="evenodd"/>
             <path fillRule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clipRule="evenodd"/>
             <path fillRule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clipRule="evenodd"/>
@@ -35,7 +36,7 @@ export const ToolTip = () => {
     );
 
     return (
-        <div data-toggle="tooltip" data-placement="bottom">
+        <div data-toggle="tooltip" data-placement="bottom" tabIndex={0} onBlur={() => onBlurToolTip()} className="tooltipButton">
             {activeTooltip? xCricle : infoCircle}
         </div>
     )
