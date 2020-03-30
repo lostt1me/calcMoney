@@ -15,7 +15,7 @@ const moneySpan: IMoneySpan = {
 
 interface IMoneyInputProps {
     payType: string;
-    changeNet: any;
+    changeNet: () => Object;
 }
 
 export const MoneyInput = (data: IMoneyInputProps) => {
