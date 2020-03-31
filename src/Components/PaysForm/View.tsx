@@ -24,13 +24,23 @@ export const View = (data: IVeiwProps) => {
             <div className="d-flex flex-column fontForm">
                 <h1>Сумма</h1>
                 <div className="d-flex flex-column radioForm">
-                    <label><Field name="chargeType" component="input" type="radio" value="salaryMonth"/><span>Оклад за месяц</span></label>
-                    <div className="d-flex flex-row">
-                        <label><Field name="chargeType" component="input" type="radio" value="mrot"/><span>МРОТ</span></label>
+                    <label>
+                        <Field name="chargeType" component="input" type="radio" value="salaryMonth"/>
+                        <span>Оклад за месяц</span>
+                    </label>
+                    <label className="d-flex flex-row">
+                        <Field name="chargeType" component="input" type="radio" value="mrot"/>
+                        <span className="text">МРОТ</span>
                         <ToolTip />
-                    </div>
-                    <label><Field name="chargeType" component="input" type="radio" value="payDay"/><span>Оплата за день</span></label>
-                    <label><Field name="chargeType" component="input" type="radio" value="payHour"/><span>Оклад за час</span></label>
+                    </label>
+                    <label>
+                        <Field name="chargeType" component="input" type="radio" value="payDay"/>
+                        <span>Оплата за день</span>
+                    </label>
+                    <label>
+                        <Field name="chargeType" component="input" type="radio" value="payHour"/>
+                        <span>Оклад за час</span>
+                    </label>
                 </div>
                 {!(hasMrot==="mrot")? <Switch changeStatus={changeNdflStatus}/> : undefined}
                 {!(hasMrot==="mrot")? <MoneyInput payType={hasMrot} changeNet={changeNet}/> : undefined}

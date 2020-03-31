@@ -4,8 +4,10 @@
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
         -webkit-appearance: none;
+    }
+    -moz-appearance: textfield;
 }
-}
+
 @font-face { 
     font-family: "rouble";
     src: url("../font/fonts//rouble.otf") format("opentype");
@@ -18,5 +20,5 @@
 }
 .input-form {
     margin: 10px;
-    padding-left: 17px;
+    padding-left: 40px;
 }
