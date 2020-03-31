@@ -36,7 +36,7 @@ export const calculateSum = (pay: number) => (dispatch: Dispatch, getState: () =
 }
 export const calculateUpdateSwitch = () => (dispatch: Dispatch, getState: () => any) => {
     const state = getState();
-    const pay: number = state.form.PaysForm.values.money;
+    const pay: number = state.form.PaysForm.values.money.replace(/[^\d]/g, '');
     if(state.form.PaysForm.values.ndfl){
         return dispatch({
             type: ACTIONS.SHOWMONEY,
