@@ -41,18 +41,19 @@ export const calculateUpdateSwitch = () => (dispatch: Dispatch, getState: () => 
         return dispatch({
             type: ACTIONS.SHOWMONEY,
             payload: {
-                net: Number(pay) * 0.87,
-                ndfl: Number(pay) * 0.13,
+                net: Math.round(Number(pay) * 0.87),
+                ndfl: Math.round(Number(pay) * 0.13),
                 gross: Number(pay)
             }
         });
     } else {
+        let gross = Math.round(Number(pay) / 0.87)
         return dispatch({
             type: ACTIONS.SHOWMONEY,
             payload: {
                 net: Number(pay),
-                ndfl: Number(pay) * 0.13,
-                gross: Number(pay) * 1.13
+                ndfl: Math.round(gross * 0.13),
+                gross: gross
             }
         });
     }
