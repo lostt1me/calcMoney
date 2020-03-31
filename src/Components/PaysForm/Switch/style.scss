@@ -10,7 +10,6 @@
 .custom-control-input:checked {
     & ~ .custom-control-label::before {
         background-color: orange;
-        cursor: pointer;
         border-color:grey;
     }
     & ~ .custom-control-label {
@@ -18,6 +17,14 @@
     }
     & ~ .custom-control-label-left {
         color: grey;
+    }
+}
+.custom-control-label {
+    &::before {
+        cursor: pointer;
+    }
+    &::after {
+        cursor: pointer;
     }
 }
 .custom-control-label {
