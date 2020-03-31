@@ -5,7 +5,7 @@ import { calculateSum, calculateUpdateSwitch } from '../../Redux/Actions/index';
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        changeNet: (e:any) => dispatch(calculateSum(Number(e.target.value))),
+        changeNet: (e:any) => dispatch(calculateSum(Number(e.target.value.replace(/[^\d]/g, '')))),
         changeNdflStatus: () => dispatch(calculateUpdateSwitch())
     }
 }

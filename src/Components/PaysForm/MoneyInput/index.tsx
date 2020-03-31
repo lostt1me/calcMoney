@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import { normalizeInput } from './normalizeInput';
 import './style.scss';
 
 interface IMoneySpan {
@@ -22,7 +23,7 @@ export const MoneyInput = (data: IMoneyInputProps) => {
     const { payType, changeNet } = data;
     return (
         <div className="d-flex flex-row input-form">
-            <Field name="money" type="number" className="input-field" component="input" onChange={changeNet}/>
+            <Field name="money" type="text" className="input-field" component="input" onChange={changeNet} normalize={normalizeInput}/>
             <span className="rub">i</span>
             <span className="rub">{moneySpan[payType]}</span>
         </div>
