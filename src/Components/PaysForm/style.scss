@@ -19,11 +19,17 @@ input {
     & h1 {
         font-size: 10px;
         color: grey;
+        margin-left: 10px;
+        margin-bottom: 5px;
     }
     .radioForm {
         padding-left: 18px;
         & label {
             font-weight: bold;
+            margin-bottom: 0px;
+            & span {
+                margin-left: 7px;
+            }
         }
     }
 }

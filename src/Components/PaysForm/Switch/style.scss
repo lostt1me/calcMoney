@@ -1,9 +1,16 @@
+.switchForm {
+    margin-top: 7px;
+    margin-left: 15px;
+    font-size: 0.75em;
+}
+
 .custom-control {
     padding-left: 0px;
 }
 .custom-control-input:checked {
     & ~ .custom-control-label::before {
         background-color: orange;
+        cursor: pointer;
         border-color:grey;
     }
     & ~ .custom-control-label {

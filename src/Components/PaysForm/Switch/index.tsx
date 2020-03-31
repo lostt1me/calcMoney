@@ -9,7 +9,7 @@ interface ISwitchProps {
 export const Switch = (data: ISwitchProps) => {
     const { changeStatus } = data;
     return (
-        <div className="d-flex flex-row">
+        <div className="d-flex flex-row switchForm">
                     <div className="custom-control custom-switch">
                         <Field name="ndfl" component="input" type="checkbox" className="custom-control-input" id="ndflSwitch" onChange={changeStatus}/>
                         <label className="custom-control-label-left" htmlFor="ndflSwitch">Указать с НДФЛ</label>
