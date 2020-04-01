@@ -22,5 +22,5 @@ const ViewConnect = connect( (state: any) => ({
 
 export const PaysForm = reduxForm({
     form: 'PaysForm',
-    initialValues: {chargeType: 'salaryMonth', ndfl: true, money: 0},
+    initialValues: {chargeType: 'salaryMonth', ndfl: true, money: "0"},
 })(ViewConnect);

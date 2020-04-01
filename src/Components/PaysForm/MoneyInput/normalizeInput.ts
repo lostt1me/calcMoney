@@ -1,8 +1,8 @@
 export const normalizeInput = (value: string) => {
     if (!value) {
-        return value;
+        return "0";
     }
 
-    const onlyNums: string  = value.replace(/[^\d]/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    const onlyNums: string  = value.replace(/[^\d]/g, '').replace(/^0+/, '').replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     return onlyNums;
 }
