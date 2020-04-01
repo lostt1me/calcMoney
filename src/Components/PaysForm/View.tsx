@@ -39,7 +39,7 @@ export const View = (data: IVeiwProps) => {
                     </label>
                     <label>
                         <Field name="chargeType" component="input" type="radio" value="payHour"/>
-                        <span>Оклад за час</span>
+                        <span>Оплата за час</span>
                     </label>
                 </div>
                 {!(hasMrot==="mrot")? <Switch changeStatus={changeNdflStatus}/> : undefined}
