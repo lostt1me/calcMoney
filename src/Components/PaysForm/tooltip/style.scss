@@ -8,34 +8,36 @@ svg {
 }
 
 .tooltip {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     &.show {
         opacity: 1;
     }
     .arrow {
         padding: 0px;
         &::before {
-            top: -2px;
+            top: 0px;
             bottom: -7px;
-            left: 4px;
-            border: 6px solid transparent; border-bottom: 6px solid #483D8B; border-left: 6px solid #483D8B;
+            left: 6px;
+            border: 8px solid transparent; border-bottom: 8px solid #483D8B; border-left: 8px solid #483D8B;
         }
     }
 }
 
 .tooltip-inner {
+    max-width: 400px;
     position: absolute;
     text-align: left;
-    width: 130px;
-    top: 4px;
-    left: 4px;
-    padding: 5px 5px;
+    width: 240px;
+    top: 10px;
+    left: 6px;
+    padding: 18px 15px;
     background-color:#483D8B;
     border-radius: 0;
+    line-height: 200%;
 }
 
 .tooltipButton {
     padding-left: 10px;
-    margin-top: -5px;
+    margin-top: -3px;
     outline: none;
 }

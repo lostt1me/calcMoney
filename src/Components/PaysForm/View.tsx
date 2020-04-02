@@ -14,35 +14,48 @@ interface IVeiwProps {
     ndflShow: number;
     grossShow: number;
     changeNet: any;
-    changeNdflStatus: any;   
+    changeNdflStatus: any;
+    switchStatus: boolean;
 }
 
 export const View = (data: IVeiwProps) => {
-    const {hasMrot, netShow, ndflShow, grossShow, changeNet, changeNdflStatus} = data;
+    const {hasMrot, netShow, ndflShow, grossShow, changeNet, changeNdflStatus, switchStatus} = data;
     return (
         <form>
             <div className="d-flex flex-column fontForm">
                 <h1>Сумма</h1>
                 <div className="d-flex flex-column radioForm">
-                    <label>
-                        <Field name="chargeType" component="input" type="radio" value="salaryMonth"/>
+                    <div className="d-flex flex-row">
+                        <label>
+                            <Field name="chargeType" component="input" type="radio" value="salaryMonth"/>
+                            <div/>
+                        </label>
                         <span>Оклад за месяц</span>
-                    </label>
-                    <label className="d-flex flex-row">
-                        <Field name="chargeType" component="input" type="radio" value="mrot"/>
+                    </div>
+                    <div className="d-flex flex-row">
+                        <label>
+                            <Field name="chargeType" component="input" type="radio" value="mrot"/>
+                            <div/>
+                        </label>
                         <span className="text">МРОТ</span>
                         <ToolTip />
-                    </label>
-                    <label>
-                        <Field name="chargeType" component="input" type="radio" value="payDay"/>
+                    </div>
+                    <div className="d-flex flex-row">
+                        <label>
+                            <Field name="chargeType" component="input" type="radio" value="payDay"/>
+                            <div/>
+                        </label>
                         <span>Оплата за день</span>
-                    </label>
-                    <label>
-                        <Field name="chargeType" component="input" type="radio" value="payHour"/>
+                    </div>
+                    <div className="d-flex flex-row">
+                        <label>
+                            <Field name="chargeType" component="input" type="radio" value="payHour"/>
+                            <div/>
+                        </label>
                         <span>Оплата за час</span>
-                    </label>
+                    </div>
                 </div>
-                {!(hasMrot==="mrot")? <Switch changeStatus={changeNdflStatus}/> : undefined}
+                {!(hasMrot==="mrot")? <Switch changeStatus={changeNdflStatus} switchStatus={switchStatus}/> : undefined}
                 {!(hasMrot==="mrot")? <MoneyInput payType={hasMrot} changeNet={changeNet}/> : undefined}
                 {(hasMrot==="salaryMonth")? <ShowPay netShow={netShow} ndflShow={ndflShow} grossShow={grossShow}/> : undefined}
             </div>

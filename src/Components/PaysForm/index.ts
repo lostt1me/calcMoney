@@ -15,7 +15,8 @@ const ViewConnect = connect( (state: any) => ({
     hasMrot: selector(state, 'chargeType'),
     netShow: state.payForm.net,
     ndflShow: state.payForm.ndfl,
-    grossShow: state.payForm.gross
+    grossShow: state.payForm.gross,
+    switchStatus: selector(state, 'ndfl')
     }),
     mapDispatchToProps
 )(View);

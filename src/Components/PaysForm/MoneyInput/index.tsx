@@ -23,7 +23,7 @@ export const MoneyInput = (data: IMoneyInputProps) => {
     const { payType, changeNet } = data;
     return (
         <div className="d-flex flex-row input-form">
-            <Field name="money" type="text" className="input-field" component="input" onChange={changeNet} normalize={normalizeInput}/>
+            <Field name="money" type="text" className="input-field" component="input" onChange={changeNet} normalize={normalizeInput} maxLength="9"/>
             <span className="rub">i</span>
             <span className="rub">{moneySpan[payType]}</span>
         </div>

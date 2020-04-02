@@ -4,17 +4,20 @@ import './style.scss';
 
 interface ISwitchProps {
     changeStatus: any;
+    switchStatus: boolean;
 }
 
 export const Switch = (data: ISwitchProps) => {
-    const { changeStatus } = data;
+    const { changeStatus, switchStatus } = data;
+    console.log(switchStatus);
     return (
         <div className="d-flex flex-row switchForm">
-                    <div className="custom-control custom-switch">
-                        <Field name="ndfl" component="input" type="checkbox" className="custom-control-input" id="ndflSwitch" onChange={changeStatus}/>
-                        <label className="custom-control-label-left" htmlFor="ndflSwitch">Указать с НДФЛ</label>
-                        <label className="custom-control-label" htmlFor="ndflSwitch">Без НДФЛ</label>
-                    </div>
+            <span className={"custom-control-label-left" + (!switchStatus ? '  active' : ' disabled')}>Указать с НДФЛ</span>
+            <label className="switch">
+                <Field name="ndfl" component="input" type="checkbox" className="custom-control-input-custom" onChange={changeStatus}/>
+                <div className="slider round"/>
+            </label>
+            <span className={"custom-control-label-right" + (switchStatus ? '  active' : ' disabled')}>Без НДФЛ</span>
         </div>
     )
 }

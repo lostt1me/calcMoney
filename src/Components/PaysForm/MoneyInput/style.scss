@@ -6,6 +6,8 @@
         -webkit-appearance: none;
     }
     -moz-appearance: text-field;
+    cursor: text;
+    box-shadow: none;
 }
 
 @font-face { 
@@ -25,4 +27,6 @@
 
 input {
     padding-left: 10px;
+    box-shadow: none;
+    border: 1px solid grey;
 }

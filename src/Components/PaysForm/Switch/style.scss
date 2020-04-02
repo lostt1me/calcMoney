@@ -7,31 +7,76 @@
 .custom-control {
     padding-left: 0px;
 }
-.custom-control-input:checked {
-    & ~ .custom-control-label::before {
-        background-color: orange;
-        border-color:grey;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;  
+    & [type="checkbox"] {
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
-    & ~ .custom-control-label {
-        color: black;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;  
+    &:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        top: 1px;
+        left: 1px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
     }
-    & ~ .custom-control-label-left {
+} 
+input:checked {
+    & + .slider {
+    background-color: #FF8C00;
+  }
+}
+input:checked {
+    & + .slider:before {
+        -webkit-transform: translateX(14px);
+        -ms-transform: translateX(14px);
+        transform: translateX(14px);
+    }
+    & + .custom-control-label-right {
         color: grey;
     }
 }
-.custom-control-label {
-    &::before {
-        cursor: pointer;
-    }
-    &::after {
-        cursor: pointer;
+.slider.round {
+    border-radius: 34px;  
+    &.round:before {
+        border-radius: 50%;
     }
 }
-.custom-control-label {
-    margin-left: 35px;
-    color: grey;
+.custom-control-label-right {
+    margin-left: 8px;
+    color: black;
 }
 .custom-control-label-left {
     padding-right: 8px;
     padding-left: 34px;
+    color: black;
+}
+
+.custom-control-label-left,
+.custom-control-label-right {
+    opacity: 0.5;
+    &.active {
+        opacity: 1;
+    }
 }
