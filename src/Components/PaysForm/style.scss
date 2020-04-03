@@ -23,9 +23,11 @@ input {
         margin-bottom: 5px;
     }
     .radioForm {
+        .d-flex .flex-row {
+            margin-bottom: 8px;
+        }
         padding-left: 18px;
         & div {
-            margin-bottom: 8px;
             & label {
                 position: relative; 
                 [type="radio"] {
